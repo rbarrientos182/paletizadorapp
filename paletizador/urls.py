@@ -3,5 +3,5 @@ from . import views
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    url(r'^paletizador/$', views.paletizador_edit(), name='edit'),
+    url(r'^paletizador/$', views.paletizador_edit, name='edit'),
 ]

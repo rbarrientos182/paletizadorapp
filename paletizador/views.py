@@ -1,12 +1,16 @@
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
+from django.template import loader
 
 from .models import Paletizador
 from .models import Deposito
+from .models import Zona
+from .models import Region
 
-def paletizador_edit(arg):
+def paletizador_edit(request):
     deposito = Deposito.objects.order_by('idDeposito')
     template = loader.get_template('paletizador.html')
-    title = 'Configuración Paletizador'
+    title = 'Configuracion Paletizador'
     context = {
         'deposito' : deposito,
         'title' : title

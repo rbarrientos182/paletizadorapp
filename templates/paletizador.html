@@ -4,27 +4,59 @@
 {% endblock %}
 
 {% block content %}
-<h1>Configuración</h1>
-      <form role="form" class="" action="index.html" method="post">
-          <div class="form-group">
-              <label for="exampleInputEmail1">CEDIS</label>
-              <select class="form-control" name="cedis">
-                {% for dep in deposito %}
-                  <option value="{{ dep.pk }}">{{ dep.deposito }}</option>
-                {% endfor %}
-              </select>
-          </div>
-          <div class="form-group">
-              <input type="text" name="" value="">
-              <input type="text" name="" value="">
-              <input type="text" name="" value="">
-          </div>
-          <div class="form-group">
-              <input type="text" name="" value="">
-              <input type="text" name="" value="">
-              <input type="text" name="" value="">
-          </div>
-          <button type="submit" class="btn btn-default">Guardar</button>
-          <button type="reset" class="btn btn-default">Cancelar</button>
-      </form>
+<div class="row">
+    <h1>Configuración</h1>
+  <div class="col-md-10">
+    <div class="nav-tabs-custom">
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#paletizador" data-toggle="tab">Paletizador</a></li>
+        <li><a href="#pasillos" data-toggle="tab">Pasillos</a></li>
+      </ul>
+      <div class="tab-content">
+        <div class="active tab-pane" id="paletizador">
+          <form role="form" class="form-horizontal" action="" method="post">
+              {% csrf_token %}
+              <div class="box-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="exampleInputEmail1">CEDIS</label>
+                    <div class="col-sm-8">
+                      <select class="form-control" name="cedis">
+                        {% for dep in deposito %}
+                          <option value="{{ dep.pk }}">{{ dep.deposito }}</option>
+                        {% endfor %}
+                      </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label" for="exampleInputEmail1">CEDIS</label>
+                  <div class="col-sm-8">
+                    <input type="text" name="" value="">
+                    <input type="text" name="" value="">
+                    <input type="text" name="" value="">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label" for="exampleInputEmail1"></label>
+                  <div class="col-sm-8">
+                    <input type="text" name="" value="">
+                    <input type="text" name="" value="">
+                    <input type="text" name="" value="">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-6">
+                    <button type="submit" class="btn btn-default">Guardar</button>
+                    <button type="reset" class="btn btn-default">Cancelar</button>
+                  </div>
+                </div>
+              </div>
+          </form>
+        </div>
+        <div class="tab-pane" id="pasillos">
+          jsjsjs
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}

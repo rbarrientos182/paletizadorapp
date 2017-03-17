@@ -4,5 +4,27 @@
 {% endblock %}
 
 {% block content %}
-      esto es un form
+<h1>Configuración</h1>
+      <form role="form" class="" action="index.html" method="post">
+          <div class="form-group">
+              <label for="exampleInputEmail1">CEDIS</label>
+              <select class="form-control" name="cedis">
+                {% for dep in deposito %}
+                  <option value="{{ dep.pk }}">{{ dep.deposito }}</option>
+                {% endfor %}
+              </select>
+          </div>
+          <div class="form-group">
+              <input type="text" name="" value="">
+              <input type="text" name="" value="">
+              <input type="text" name="" value="">
+          </div>
+          <div class="form-group">
+              <input type="text" name="" value="">
+              <input type="text" name="" value="">
+              <input type="text" name="" value="">
+          </div>
+          <button type="submit" class="btn btn-default">Guardar</button>
+          <button type="reset" class="btn btn-default">Cancelar</button>
+      </form>
 {% endblock %}

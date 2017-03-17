@@ -8,7 +8,7 @@ from .models import Zona
 from .models import Region
 
 def paletizador_edit(request):
-    deposito = Deposito.objects.order_by('idDeposito')
+    deposito = Deposito.objects.order_by('deposito')
     template = loader.get_template('paletizador.html')
     title = 'Configuracion Paletizador'
     context = {
